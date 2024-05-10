@@ -16,8 +16,8 @@ import animationData from '../components/images/Animation - 1710833693479.json';
 
 export default function AddEmployee(){
   
-  const ShopID = `shop${Math.floor(Math.random() * 10000).toString().padStart(4, '0')}`;
-  const [name, setName]= useState("");
+  const blogID = `blog${Math.floor(Math.random() * 10000).toString().padStart(4, '0')}`;
+  const [description, setdescription]= useState("");
   const [filepath, setFilepath]= useState("");
   const[contact, setContact]= useState("");
   const [errorMessage, setErrorMessage] = useState(""); 
@@ -66,13 +66,13 @@ export default function AddEmployee(){
    function sendData(e){
     e.preventDefault();
 
-    if(ShopID.length===0 || name.length===0 || contact.length===0 || catogory.length===0 || join.length===0 || filepath.length===0){
+    if(blogID.length===0 || description.length===0 || contact.length===0 || catogory.length===0 || join.length===0 || filepath.length===0){
       setError(true);
   }
   else{
         const formData = {
-        ShopID,
-          name,
+        blogID,
+        description,
           filepath,
           contact,
           catogory,
@@ -83,18 +83,18 @@ export default function AddEmployee(){
     const formData = new FormData();
 
 
-    formData.append('ShopID', ShopID);
-    formData.append('name', name);
+    formData.append('blogID', blogID);
+    formData.append('description', description);
     formData.append('filepath', filepath);
     formData.append('contact', contact);
     formData.append('catogory', catogory);
     formData.append('join', join);
 
 
-    axios.post("http://localhost:5000/shop/add", formData).then(()=>{
+    axios.post("http://localhost:5000/blog/add", formData).then(()=>{
       
       //alert("Employee Added")
-      toast.success("Shop Added Successfully!",{theme:'colored'});
+      toast.success("blog Added Successfully!",{theme:'colored'});
 
       
     }).catch((err)=>{
@@ -140,25 +140,25 @@ export default function AddEmployee(){
                     width:"1000px"
                 }}>
           <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl white:text-dark">
-          Add New Shop
+          Add New blog
               </h1>
         <form onSubmit={sendData} class="max-w-sm mx-auto">
            <div class="mb-5">
-    <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 white:text-dark" >Shop ID :</label>
-    <input type="text" id="base-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={ShopID}  aria-describedby="emailHelp" placeholder="Enter Shop Name"
+    <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 white:text-dark" >blog ID :</label>
+    <input type="text" id="base-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={blogID}  aria-describedby="emailHelp" placeholder="Enter blog Name"
     />
 
-          {errors&&ShopID.length<=0?<label className="validation-label">ID cannot be empty</label>:""}
+          {errors&&blogID.length<=0?<label className="validation-label">ID cannot be empty</label>:""}
   </div>
         <div className="mb-5">
-        <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 white:text-dark">Shop Name :</label>
-        <input type="text" id="base-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={name} placeholder="Enter Employee Name"
+        <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 white:text-dark">blog description :</label>
+        <input type="text" id="base-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={description} placeholder="Enter Employee description"
            onChange={(e)=>{
 
-     setName(e.target.value);
+     setdescription(e.target.value);
 }}/>
 
-{errors&&name.length<=0?<label className="validation-label">Name cannot be empty</label>:""}
+{errors&&description.length<=0?<label className="validation-label">description cannot be empty</label>:""}
   </div>
 
   <div class="mb-5">
@@ -173,19 +173,9 @@ export default function AddEmployee(){
           </div>
 
           <div className="mb-5">
-  <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 white:text-dark"> Contact No  :</label>
-  <input
-        type="tel"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        id="contact"
-        name="contact"
-        value={contact}
-        onChange={handlePhoneChange}
-      />
+  
+  
      
-      <span id="phone-error">{phoneError}</span>
-   
-         {errors&&contact.length<=0?<label className="validation-label">Contact Number cannot be empty</label>:""}
   </div>  
 
   <div className="form-group">

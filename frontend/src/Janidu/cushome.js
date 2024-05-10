@@ -1,4 +1,4 @@
-// shop.js
+// blog.js
 
 import React from 'react';
 import { FaUserCircle, FaStar, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
@@ -16,13 +16,13 @@ import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import jsPDF from "jspdf";
 import { toast, ToastContainer } from "react-toastify";
-import ShopDetails from '../Dulsha/components/shopview'; // Changed the path to ShopDetails component
+
 
 export default function CusHome() {
   const [featuredStores, setFeaturedStores] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/shop')
+    axios.get('http://localhost:5000/blog')
       .then(response => {
         setFeaturedStores(response.data);
       })
@@ -72,7 +72,7 @@ export default function CusHome() {
       <div className="bg-indigo-600 py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold text-white mb-4">Welcome to Our Mall</h1>
-          <p className="text-lg text-gray-300 mb-8">Explore a world of shopping, dining, and entertainment.</p>
+          <p className="text-lg text-gray-300 mb-8">Explore a world of blogping, dining, and entertainment.</p>
           <a href='/about'>
             <button className="bg-white text-indigo-600 py-3 px-6 rounded-lg hover:bg-indigo-700 hover:text-white transition-colors duration-300">
               About Us
@@ -93,10 +93,10 @@ export default function CusHome() {
                 />
                 <h3 className="text-lg font-bold mb-2">{store.name}</h3>
                 <p className="text-gray-600 mb-4 text-center">
-                  {store.catogory}
+        
                 </p>
-                <Link to={`/shop/${store._id}`} className="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300">
-                  Visit Store
+                <Link to={`/blog/${store._id}`} className="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300">
+                  View Blog
                 </Link>
               </div>
             ))}
@@ -172,7 +172,7 @@ export default function CusHome() {
           {/* Event Card 3 */}
           <div className="bg-white rounded-lg shadow-md p-6 flex flex-col">
             <img
-              src="https://imgix.theurbanlist.com/content/article/TheShoppes-MBS.jpg"
+              src="https://imgix.theurbanlist.com/content/article/Theblogpes-MBS.jpg"
               alt="Event Image"
               className="mb-4 rounded-lg"
             />

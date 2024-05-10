@@ -1,5 +1,5 @@
 const router =  require("express").Router();
-let Shop = require("../Model/Shop");
+let blog = require("../Model/Shop");
 
 const multer = require('multer');
 const { v4: uuidv4 } = require('uuid');
@@ -29,16 +29,16 @@ let upload = multer({ storage, fileFilter })
 
 router.route("/add").post(upload.single("filepath"),(req,res)=>{
 
-    const ShopID = req.body.ShopID;
-    const name = req.body.name;
+    const blogID = req.body.blogID;
+    const description = req.body.description;
     const filepath = req.file.filename;
     const contact = Number( req.body.contact);
     const catogory = req.body.catogory;
     const join = req.body.join;
 
-    const newShop = new Shop({
-        ShopID,
-        name,
+    const newblog = new blog({
+        blogID,
+        description,
         filepath,     
         contact,
         catogory,
@@ -48,8 +48,8 @@ router.route("/add").post(upload.single("filepath"),(req,res)=>{
 
     console.log(req.file)
 
-    newShop.save().then(()=>{
-        res.json("Shop Added")
+    newblog.save().then(()=>{
+        res.json("blog Added")
     }).catch((err)=>{
         console.log(err);
     })
@@ -57,8 +57,8 @@ router.route("/add").post(upload.single("filepath"),(req,res)=>{
 
 router.route("/").get((req,res)=>{
 
-    Shop.find().then((shop)=>{
-        res.json(shop)
+    blog.find().then((blog)=>{
+        res.json(blog)
     }).catch((err)=>{
         console.log(err);
     })
@@ -66,18 +66,18 @@ router.route("/").get((req,res)=>{
 
 router.route("/update/:id").put(async (req,res) =>{
     let userId = req.params.id;
-    const{ShopID,name, filepath,contact,catogory,join} = req.body;
+    const{blogID,description, filepath,contact,catogory,join} = req.body;
 
-    const updateShop = {
-        ShopID,
-        name,
+    const updateblog = {
+        blogID,
+        description,
         filepath,
         contact,
         catogory,
         join
     }
 
-    const update = await Shop.findByIdAndUpdate(userId,updateShop)
+    const update = await blog.findByIdAndUpdate(userId,updateblog)
     .then(() =>{
         res.status(200).send ({status: "User updated"})
 
@@ -90,12 +90,12 @@ router.route("/update/:id").put(async (req,res) =>{
 router.route("/delete/:id").delete(async (req , res) => {
     let userId = req.params.id;
 
-    await Shop.findByIdAndDelete(userId)
+    await blog.findByIdAndDelete(userId)
      .then(() =>{
-        res.status(200).send({status:" Shop deleted "});
+        res.status(200).send({status:" blog deleted "});
      }).catch ((err)=>{
         console.log(err.message);
-        res.status(500).send({status: "error with delete shop", error: err.message});
+        res.status(500).send({status: "error with delete blog", error: err.message});
      })
 })
 
@@ -103,21 +103,29 @@ router.route("/delete/:id").delete(async (req , res) => {
 
 router.route("/:id").get(async (req, res) => {
     try {
-        const shop = await Shop.findById(req.params.id);
-        res.json(shop);
+        const fetchedBlog = await blog.findById(req.params.id);
+        if (!fetchedBlog) {
+            return res.status(404).send({ error: "Blog not found. Unable to retrieve blog details." });
+        }
+        res.json(fetchedBlog);
     } catch (err) {
         console.error(err.message);
-        res.status(500).send({ error: "Error getting shop details" });
+        res.status(500).send({ error: "Error getting blog details. Please try again later." });
     }
 });
 
+
+
+
+
+
 router.route("/count").get(async (req, res) => {
     try {
-        const count = await Shop.countDocuments();
+        const count = await blog.countDocuments();
         res.json({ count });
     } catch (err) {
         console.error(err.message);
-        res.status(500).send({ error: "Error getting Shop count" });
+        res.status(500).send({ error: "Error getting blog count" });
     }
 });
 

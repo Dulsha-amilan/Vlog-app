@@ -2,15 +2,15 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const shopSchema = new Schema({
+const blogSchema = new Schema({
 
-    ShopID:{
+    blogID:{
         type: String,
         required: true
 
     },
 
-    name:{
+    description:{
         type: String,
         required: true
     },
@@ -36,6 +36,6 @@ const shopSchema = new Schema({
     }
 })
 
-const Shop = mongoose.model("Shop",shopSchema);
+const blog = mongoose.model("blog",blogSchema);
 
-module.exports = Shop;
+module.exports = blog;

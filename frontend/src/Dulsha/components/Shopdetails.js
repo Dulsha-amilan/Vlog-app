@@ -11,7 +11,7 @@ export default function CusHome() {
   const [featuredStores, setFeaturedStores] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/shop')
+    axios.get('http://localhost:5000/blog')
       .then(response => {
         setFeaturedStores(response.data);
       })
@@ -21,14 +21,14 @@ export default function CusHome() {
   }, []);
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/shop/delete/${id}`)
+    axios.delete(`http://localhost:5000/blog/delete/${id}`)
       .then(response => {
         toast.success(response.data.status);
         setFeaturedStores(prevState => prevState.filter(store => store._id !== id));
       })
       .catch(error => {
-        console.error('Error deleting shop:', error);
-        toast.error('Error deleting shop');
+        console.error('Error deleting blog:', error);
+        toast.error('Error deleting blog');
       });
   };
 
@@ -50,7 +50,7 @@ export default function CusHome() {
                 <p className="text-gray-600 mb-4 text-center">
                   {store.catogory}
                 </p>
-                <Link to={`/shop/${store._id}`} className="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300">
+                <Link to={`/blog/${store._id}`} className="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300">
                   Visit Store
                 </Link>
                 <button

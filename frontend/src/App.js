@@ -98,7 +98,7 @@ function App() {
             <Route path = "/SupplierProduct" element = { <SupplierProduct/>} />
             <Route path = "/about" element = { <AboutUs/>} />
             <Route path = "/dd" element = { <Shopdetails/>} />
-            <Route exact path="/shop/:id" element={<ShopDetails />} />
+            <Route exact path="/blog/:id" element={<ShopDetails />} />
 
 
         </Routes>
