@@ -57,7 +57,7 @@ function App() {
     <div className="App">
      <BrowserRouter>
           <Routes>
-          <Route path="/login" element={<Login/>}/>
+          <Route path="/" element={<Login/>}/>
             <Route path="/Register" element={<Register/>}/>
             <Route path="/Admin" element={<Admin/>}/>
             <Route path="/sidebar" element={<Sidebar/>}/>
@@ -65,7 +65,7 @@ function App() {
             <Route path="/viewemployee" element={<AllEmployees/>}/>
             <Route path="/updateemployee/:id" element={<UpdateEmployee/>}/>
             <Route path="/addemployee" element={<AddEmployee/>}/>
-            <Route path="/" element={<CusHome/>}/>
+            <Route path="/cushome" element={<CusHome/>}/>
             <Route path="/cart" element={<ShoppingCart/>}/>
             <Route path="/shop" element={<Shop/>}/>
             <Route path="/feedback" element={<Feedback/>}/>

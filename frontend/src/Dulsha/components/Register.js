@@ -41,7 +41,7 @@ function Register() {
             }
             const url = "http://localhost:5000/api/users";
             const { data: res } = await axios.post(url, formData);
-            navigate("/login");
+            navigate("/");
             console.log(res.message);
         } catch (error) {
             if (error.response && error.response.status >= 400 && error.response.status <= 500) {
