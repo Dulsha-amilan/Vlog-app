@@ -67,7 +67,7 @@ const ComponentDetails = () => {
           <h1 className="text-3xl font-bold mb-8 text-center">{component.catogory} Component</h1>
           
           <h4 className="text-2xl font-bold mb-8 text-left">Code Flow V 1.0</h4>
-          <h4 className="text-1xl font-bold mb-8 text-left">Publish Date :-{component.join}</h4>
+          <h4 className="text-1xl font-bold mb-8 text-left">Publish Date :- {component.join}</h4>
 
 
           <div className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
