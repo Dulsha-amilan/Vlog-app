@@ -7,7 +7,8 @@ import animationData from '../components/images/Animation - 1710828800567.json';
 import 'react-toastify/dist/ReactToastify.css';
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
-
+import Header from './navbar';
+import Footer from '../../Pages/footer';
 function Register() {
     const [data, setData] = useState({
         firstName: "",
@@ -52,6 +53,7 @@ function Register() {
 
     return(
         <div>
+            <Header/>
           <div 
         
         style= {{
@@ -159,6 +161,7 @@ function Register() {
         </div>
     </section>
     </div>
+    <Footer />
     </div>
     
     )

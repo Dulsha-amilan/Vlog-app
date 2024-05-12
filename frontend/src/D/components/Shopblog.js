@@ -79,7 +79,7 @@ export default function CusHome() {
     <div className="bg-gradient-to-b from-gray-100 to-white">
       <ToastContainer /> {/* Use ToastContainer here */}
       <div className="container mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">View component</h2>
+        <h2 className="text-3xl font-bold text-gray-800 mb-4">View Components</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {featuredStores.map(store => (
             <div key={store._id} className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
@@ -144,15 +144,18 @@ export default function CusHome() {
                         />
                       </div>
                       <div className="mb-4">
-                        <label htmlFor="catogory" className="block text-sm font-medium text-gray-700">Category</label>
-                        <input
-                          type="text"
-                          name="catogory"
-                          id="catogory"
+                        
+                        <label class="block mb-2 text-sm font-medium text-gray-900 white:text-dark">Catogory:</label>
+  <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"id="catogory" name="catogory" 
                           value={updateData.catogory}
-                          onChange={handleChange}
-                          className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-                        />
+                          onChange={handleChange}>
+    <option value="">Select catogory</option>
+    <option value="React Native">React Native</option>
+    <option value="React">React</option>
+    <option value="Anguler">Anguler</option>
+    <option value="Java">Java</option>
+    <option value="Python">Python</option>
+  </select>
                       </div>
                       <div className="mb-4">
                         <label htmlFor="join" className="block text-sm font-medium text-gray-700">Join</label>

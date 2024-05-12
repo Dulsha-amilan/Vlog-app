@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import { toast, ToastContainer } from "react-toastify";
+import Header from './navbar';
+import Footer from '../../Pages/footer';
 
 function Login(){
     const [data, setData] = useState({ email: "", password: "" });
@@ -62,6 +64,8 @@ function Login(){
 
     return (
         <div>
+            <Header/>
+            <ToastContainer />
             <div 
                 style= {{
                     display: 'flex',
@@ -117,6 +121,7 @@ function Login(){
                     </div>
                 </section>
             </div>
+                <Footer />
         </div>
     );
 }

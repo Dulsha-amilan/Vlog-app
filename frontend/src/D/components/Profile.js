@@ -73,7 +73,7 @@ export default function ProfilePage() {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    navigate("/Login");
+    navigate("/");
   };
 
   const handleDeleteAccount = async () => {
