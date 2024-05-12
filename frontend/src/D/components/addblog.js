@@ -144,7 +144,7 @@ export default function AddEmployee(){
               </h1>
         <form onSubmit={sendData} class="max-w-sm mx-auto">
            <div class="mb-5">
-    <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 white:text-dark" >component ID :</label>
+    <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 white:text-dark" >Component ID:</label>
     <input type="text" id="base-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={componentID}  aria-describedby="emailHelp" placeholder="Enter component Name"
     />
 
@@ -152,7 +152,7 @@ export default function AddEmployee(){
   </div>
         <div className="mb-5">
 
-        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">component description :</label>
+        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Component Description :</label>
 <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={description} placeholder="Enter Employee description"
            onChange={(e)=>{
 
@@ -182,7 +182,7 @@ export default function AddEmployee(){
 
   <div className="form-group">
   <div className="form-group">
-  <label class="block mb-2 text-sm font-medium text-gray-900 white:text-dark">catogory:</label>
+  <label class="block mb-2 text-sm font-medium text-gray-900 white:text-dark">Catogory:</label>
   <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"id="catogory" value={catogory} onChange={(e) => setcatogory(e.target.value)}>
     <option value="">Select catogory</option>
     <option value="React Native">React Native</option>
@@ -196,7 +196,7 @@ export default function AddEmployee(){
   </div>
  <br></br>
   <div class="relative max-w-sm">
-                        <label for="block mb-2 text-sm font-medium text-gray-900 white:text-dark">Join Date : </label>
+                        <label for="block mb-2 text-sm font-medium text-gray-900 white:text-dark"> Publish Date : </label>
         <input type="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="join" name="join" value={join} max={join}  min={join} onChange={(event) => setJoin(event.target.value)} required />
                         {errors&&join.length<=0?<label className="validation-label">Join Date cannot be empty</label>:""}
                     </div>

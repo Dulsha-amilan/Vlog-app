@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import img1 from './img/12.png';
 //add new one
 const Header = () => {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -8,8 +9,13 @@ const Header = () => {
   <nav class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between" aria-label="Global">
     <div class="flex items-center justify-between">
       <a class="inline-flex items-center gap-x-2 text-xl font-semibold dark:text-white" href="/cushome">
-      <svg xmlns="" width="24" height="24" viewBox="0 0 24 24"><path d=""/></svg>
-      CodeFlow
+      <img
+  src={img1}
+  alt="Slider Image 1"
+  className="rounded-lg shadow-md"
+  style={{ width: '200px', height: 'auto' }} // Adjust width and height as needed
+/>
+      
       </a>
       <div class="sm:hidden">
         <button type="button" class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:border-gray-700 dark:text-white dark:hover:bg-white/10 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" data-hs-collapse="#navbar-image-and-text-1" aria-controls="navbar-image-and-text-1" aria-label="Toggle navigation">
@@ -22,8 +28,8 @@ const Header = () => {
   <div class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
 
     <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/feedback">Contact us</a>
-    <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/addshop">User add Blog Post</a>
-    <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/dd">Delete Blog Post</a>
+    <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/addshop">Add Component</a>
+    <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/dd">Delete / Edit Component</a>
     <a class="font-medium text-gray-600 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="/">Login</a>
 
     {user ? (

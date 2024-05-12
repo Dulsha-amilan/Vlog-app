@@ -92,6 +92,7 @@ export default function CusHome() {
           {store.catogory}
         </span>
       </button>
+      
       {/* Adjust the padding/margin as needed */}
       
     </div>

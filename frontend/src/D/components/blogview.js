@@ -67,8 +67,7 @@ const ComponentDetails = () => {
           <h1 className="text-3xl font-bold mb-8 text-center">{component.catogory} Component</h1>
           
           <h4 className="text-2xl font-bold mb-8 text-left">Code Flow V 1.0</h4>
-          <h4 className="text-1xl font-bold mb-8 text-left">Publish Date :- {component.join}</h4>
-
+          <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"><h4 className="">Publish Date :- {component.join}</h4></button>
 
           <div className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
             <div className="flex items-center justify-between px-3 py-2 border-b dark:border-gray-600">
@@ -87,8 +86,8 @@ const ComponentDetails = () => {
               </button>
             </div>
             <div className="px-4 py-2 bg-white rounded-b-lg dark:bg-gray-800">
-              <p className="description-content">{component.description}</p>
-            </div>
+  <pre className="description-content whitespace-pre-wrap">{component.description}</pre>
+</div>
           </div>
         </div>
       ) : (
