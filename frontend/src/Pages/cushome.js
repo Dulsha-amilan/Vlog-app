@@ -44,10 +44,11 @@ export default function CusHome() {
   return (
     <div className="bg-gradient-to-b from-gray-100 to-white">
       <Header />
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-2">
         <Slider {...settings}>
           <div>
             <img
+              
               src={img1}
               alt="Slider Image 1"
               className="rounded-lg shadow-md"

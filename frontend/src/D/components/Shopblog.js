@@ -133,15 +133,7 @@ export default function CusHome() {
                         />
                       </div>
                       <div className="mb-4">
-                        <label htmlFor="contact" className="block text-sm font-medium text-gray-700">Contact</label>
-                        <input
-                          type="text"
-                          name="contact"
-                          id="contact"
-                          value={updateData.contact}
-                          onChange={handleChange}
-                          className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-                        />
+                       
                       </div>
                       <div className="mb-4">
                         

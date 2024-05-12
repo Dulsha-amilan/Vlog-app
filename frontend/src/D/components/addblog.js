@@ -10,7 +10,8 @@ import axios from "axios";
 import Sidebar from './Sidebar'
 import Lottie from 'react-lottie';
 import animationData from './images/Animation - 1715446201110.json';
-
+import Header from '../../Pages/navbar';
+import Footer from '../../Pages/footer';
 
 
 
@@ -105,6 +106,7 @@ export default function AddEmployee(){
 
     return(
       <div>
+         <Header />
         
          <div 
         
@@ -123,6 +125,7 @@ export default function AddEmployee(){
       
       
         <div className= "container" style={{display:"flex"}}>
+       
         <ToastContainer></ToastContainer>
         <div className="container" style={{ display: "flex" }}>
                         <div style={{ width: '600px', height: '500px', marginTop: '10px' }}>
@@ -152,7 +155,7 @@ export default function AddEmployee(){
   </div>
         <div className="mb-5">
 
-        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Component Description :</label>
+        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Component Source Code :</label>
 <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={description} placeholder="Enter Employee description"
            onChange={(e)=>{
 
@@ -214,6 +217,7 @@ export default function AddEmployee(){
    </div>
   </div>
   </div>
+  <Footer />
       </div>
      
    
