@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const blogSchema = new Schema({
+const componentSchema = new Schema({
 
-    blogID:{
+    componentID:{
         type: String,
         required: true
 
@@ -36,6 +36,6 @@ const blogSchema = new Schema({
     }
 })
 
-const blog = mongoose.model("blog",blogSchema);
+const component = mongoose.model("component",componentSchema);
 
-module.exports = blog;
+module.exports = component;

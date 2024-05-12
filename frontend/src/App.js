@@ -75,7 +75,7 @@ function App() {
             
             <Route path = "/about" element = { <AboutUs/>} />
             <Route path = "/dd" element = { <Shopdetails/>} />
-            <Route exact path="/blog/:id" element={<ShopDetails />} />
+            <Route exact path="/component/:id" element={<ShopDetails />} />
 
 
         </Routes>

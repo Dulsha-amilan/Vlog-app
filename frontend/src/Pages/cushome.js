@@ -1,4 +1,4 @@
-// blog.js
+// component.js
 
 import React from 'react';
 import { FaUserCircle, FaStar, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
@@ -22,7 +22,7 @@ export default function CusHome() {
   const [featuredStores, setFeaturedStores] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/blog')
+    axios.get('http://localhost:5000/component')
       .then(response => {
         setFeaturedStores(response.data);
       })
@@ -82,24 +82,37 @@ export default function CusHome() {
       </div>
       <div className="bg-gradient-to-b from-gray-100 to-white">
         <div className="container mx-auto px-4 py-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Featured Stores</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">View component</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredStores.map(store => (
-              <div key={store._id} className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
-                <img
-                  src={`http://localhost:5000/images/${store.filepath}`}
-                  alt="Store Logo"
-                  className="mb-4"
-                />
-                <h3 className="text-lg font-bold mb-2">{store.name}</h3>
-                <p className="text-gray-600 mb-4 text-center">
-        
-                </p>
-                <Link to={`/blog/${store._id}`} className="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300">
-                  View Blog
-                </Link>
-              </div>
-            ))}
+      {featuredStores.map(store => (
+  <div key={store._id} className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+    <div className="relative inline-flex items-center justify-between w-full mb-2">
+    <button className="relative inline-flex items-center justify-right p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+          {store.catogory}
+        </span>
+      </button>
+      {/* Adjust the padding/margin as needed */}
+      
+    </div>
+    <img
+      src={`http://localhost:5000/images/${store.filepath}`}
+      alt="Store Logo"
+      className="mb-4"
+    />
+    <h3 className="text-lg font-bold mb-2">{store.name}</h3>
+    <Link to={`/component/${store._id}`} className="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300">
+        View component
+      </Link>
+      
+    <p className="text-gray-600 mb-4 text-center"></p>
+    {/* Move this button inside the div with relative positioning */}
+    {/* <Link to={`/component/${store._id}`} className="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300">
+      View component
+    </Link> */}
+  </div>
+))}
+
           </div>
         </div>
       </div>

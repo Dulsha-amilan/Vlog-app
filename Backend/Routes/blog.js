@@ -1,5 +1,5 @@
 const router =  require("express").Router();
-let blog = require("../Model/blog");
+let component = require("../Model/blog");
 
 const multer = require('multer');
 const { v4: uuidv4 } = require('uuid');
@@ -29,15 +29,15 @@ let upload = multer({ storage, fileFilter })
 
 router.route("/add").post(upload.single("filepath"),(req,res)=>{
 
-    const blogID = req.body.blogID;
+    const componentID = req.body.componentID;
     const description = req.body.description;
     const filepath = req.file.filename;
     const contact = Number( req.body.contact);
     const catogory = req.body.catogory;
     const join = req.body.join;
 
-    const newblog = new blog({
-        blogID,
+    const newcomponent = new component({
+        componentID,
         description,
         filepath,     
         contact,
@@ -48,8 +48,8 @@ router.route("/add").post(upload.single("filepath"),(req,res)=>{
 
     console.log(req.file)
 
-    newblog.save().then(()=>{
-        res.json("blog Added")
+    newcomponent.save().then(()=>{
+        res.json("component Added")
     }).catch((err)=>{
         console.log(err);
     })
@@ -57,8 +57,8 @@ router.route("/add").post(upload.single("filepath"),(req,res)=>{
 
 router.route("/").get((req,res)=>{
 
-    blog.find().then((blog)=>{
-        res.json(blog)
+    component.find().then((component)=>{
+        res.json(component)
     }).catch((err)=>{
         console.log(err);
     })
@@ -66,10 +66,10 @@ router.route("/").get((req,res)=>{
 
 router.route("/update/:id").put(async (req,res) =>{
     let userId = req.params.id;
-    const{blogID,description, filepath,contact,catogory,join} = req.body;
+    const{componentID,description, filepath,contact,catogory,join} = req.body;
 
-    const updateblog = {
-        blogID,
+    const updatecomponent = {
+        componentID,
         description,
         filepath,
         contact,
@@ -77,7 +77,7 @@ router.route("/update/:id").put(async (req,res) =>{
         join
     }
 
-    const update = await blog.findByIdAndUpdate(userId,updateblog)
+    const update = await component.findByIdAndUpdate(userId,updatecomponent)
     .then(() =>{
         res.status(200).send ({status: "User updated"})
 
@@ -90,12 +90,12 @@ router.route("/update/:id").put(async (req,res) =>{
 router.route("/delete/:id").delete(async (req , res) => {
     let userId = req.params.id;
 
-    await blog.findByIdAndDelete(userId)
+    await component.findByIdAndDelete(userId)
      .then(() =>{
-        res.status(200).send({status:" blog deleted "});
+        res.status(200).send({status:" component deleted "});
      }).catch ((err)=>{
         console.log(err.message);
-        res.status(500).send({status: "error with delete blog", error: err.message});
+        res.status(500).send({status: "error with delete component", error: err.message});
      })
 })
 
@@ -103,14 +103,14 @@ router.route("/delete/:id").delete(async (req , res) => {
 
 router.route("/:id").get(async (req, res) => {
     try {
-        const fetchedBlog = await blog.findById(req.params.id);
-        if (!fetchedBlog) {
-            return res.status(404).send({ error: "Blog not found. Unable to retrieve blog details." });
+        const fetchedcomponent = await component.findById(req.params.id);
+        if (!fetchedcomponent) {
+            return res.status(404).send({ error: "component not found. Unable to retrieve component details." });
         }
-        res.json(fetchedBlog);
+        res.json(fetchedcomponent);
     } catch (err) {
         console.error(err.message);
-        res.status(500).send({ error: "Error getting blog details. Please try again later." });
+        res.status(500).send({ error: "Error getting component details. Please try again later." });
     }
 });
 
@@ -121,11 +121,11 @@ router.route("/:id").get(async (req, res) => {
 
 router.route("/count").get(async (req, res) => {
     try {
-        const count = await blog.countDocuments();
+        const count = await component.countDocuments();
         res.json({ count });
     } catch (err) {
         console.error(err.message);
-        res.status(500).send({ error: "Error getting blog count" });
+        res.status(500).send({ error: "Error getting component count" });
     }
 });
 

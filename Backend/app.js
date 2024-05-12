@@ -19,7 +19,7 @@ const authRoutes = require("./Routes/auth");
 app.use("/api/auth",authRoutes);
 
 const blogRouter = require("./Routes/blog");
-app.use("/blog", blogRouter);
+app.use("/component", blogRouter);
 
 
 const ContactUs=require("./Routes/ContactUsrouter");
