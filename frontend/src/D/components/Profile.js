@@ -29,7 +29,7 @@ export default function ProfilePage() {
       const userId = JSON.parse(localStorage.getItem("user"))._id;
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/api/auth/profile/${userId}`,
+          `http://localhost:5001/api/auth/profile/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -54,7 +54,7 @@ export default function ProfilePage() {
       const token = localStorage.getItem("token");
       const userId = JSON.parse(localStorage.getItem("user"))._id;
       const response = await axios.put(
-        `http://localhost:5000/api/auth/update/profile/${userId}`,
+        `http://localhost:5001/api/auth/update/profile/${userId}`,
         user,
         {
           headers: {
@@ -80,7 +80,7 @@ export default function ProfilePage() {
     try {
       const token = localStorage.getItem("token");
       const userId = JSON.parse(localStorage.getItem("user"))._id;
-      await axios.delete(`http://localhost:5000/api/auth/delete/profile/${userId}`, {
+      await axios.delete(`http://localhost:5001/api/auth/delete/profile/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -117,7 +117,7 @@ export default function ProfilePage() {
                   alt="Profile Image"
                   maxWidth="100"
                   // Construct the URL to the image
-                  image={`http://localhost:5000/${user.profileImage}`} // Use the correct path to the image
+                  image={`http://localhost:5001/${user.profileImage}`} // Use the correct path to the image
                   sx={{
                     mt: 5,
                     width: 150,

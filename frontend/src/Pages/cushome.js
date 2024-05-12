@@ -22,7 +22,7 @@ export default function CusHome() {
   const [featuredStores, setFeaturedStores] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/component')
+    axios.get('http://localhost:5001/component')
       .then(response => {
         setFeaturedStores(response.data);
       })
@@ -98,7 +98,7 @@ export default function CusHome() {
       
     </div>
     <img
-      src={`http://localhost:5000/images/${store.filepath}`}
+      src={`http://localhost:5001/images/${store.filepath}`}
       alt="Store Logo"
       className="mb-4"
     />

@@ -6,7 +6,7 @@ function FeddbackDetails() {
     useEffect(() => {
         const fetchContactDetails = async () => {
             try {
-                const response = await fetch('http://localhost:5000/contactus/get');
+                const response = await fetch('http://localhost:5001/contactus/get');
                 const data = await response.json();
                 setContactDetails(data);
             } catch (error) {

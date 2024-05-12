@@ -40,7 +40,7 @@ function Register() {
             for (let key in data) {
                 formData.append(key, data[key]);
             }
-            const url = "http://localhost:5000/api/users";
+            const url = "http://localhost:5001/api/users";
             const { data: res } = await axios.post(url, formData);
             navigate("/");
             console.log(res.message);

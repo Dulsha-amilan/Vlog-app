@@ -18,7 +18,7 @@ export default function CusHome() {
   const [selectedComponentId, setSelectedComponentId] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/component')
+    axios.get('http://localhost:5001/component')
       .then(response => {
         setFeaturedStores(response.data);
       })
@@ -37,7 +37,7 @@ export default function CusHome() {
 
   const handleUpdate = () => {
     if (!selectedComponentId) return;
-    axios.put(`http://localhost:5000/component/update/${selectedComponentId}`, updateData)
+    axios.put(`http://localhost:5001/component/update/${selectedComponentId}`, updateData)
       .then(response => {
         toast.success(response.data.status);
         setShowModal(false); // Close the modal after successful update
@@ -51,7 +51,7 @@ export default function CusHome() {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/component/delete/${id}`)
+    axios.delete(`http://localhost:5001/component/delete/${id}`)
       .then(response => {
         toast.success(response.data.status);
         setFeaturedStores(prevState => prevState.filter(store => store._id !== id));
@@ -84,7 +84,7 @@ export default function CusHome() {
           {featuredStores.map(store => (
             <div key={store._id} className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
               <img
-                src={`http://localhost:5000/images/${store.filepath}`}
+                src={`http://localhost:5001/images/${store.filepath}`}
                 alt="Store Logo"
                 className="mb-4"
               />

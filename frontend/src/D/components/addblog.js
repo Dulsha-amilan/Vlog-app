@@ -92,7 +92,7 @@ export default function AddEmployee(){
     formData.append('join', join);
 
 
-    axios.post("http://localhost:5000/component/add", formData).then(()=>{
+    axios.post("http://localhost:5001/component/add", formData).then(()=>{
       
       //alert("Employee Added")
       toast.success("component Added Successfully!",{theme:'colored'});

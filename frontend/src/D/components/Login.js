@@ -51,7 +51,7 @@ function Login(){
             if (data.email === "admin@gmail.com" && data.password === "admin") {
                 window.location = "/Admin";
             } else {
-              const url = "http://localhost:5000/api/auth";
+              const url = "http://localhost:5001/api/auth";
               const { data: res } = await axios.post(url, data);
                 localStorage.setItem("token", res.data.token);
                 localStorage.setItem("user", JSON.stringify(res.data.user));

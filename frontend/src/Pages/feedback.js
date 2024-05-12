@@ -94,7 +94,7 @@ function ContactUs() {
     if (validateForm()) {
       try {
         // Send form data to backend API
-        const response = await fetch('http://localhost:5000/contactus', {
+        const response = await fetch('http://localhost:5001/contactus', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

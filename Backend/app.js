@@ -4,7 +4,7 @@ require('dotenv').config(); // Load environment variables from .env file
 const cors = require('cors'); // Import cors package
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 const MONGODB_URI = process.env.MONGODB_URI;
 const bodyParser = require("body-parser");
 // Middleware

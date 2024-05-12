@@ -25,7 +25,7 @@ const ComponentDetails = () => {
   };
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/component/${id}`)
+    axios.get(`http://localhost:5001/component/${id}`)
       .then(response => {
         setComponent(response.data);
       })
