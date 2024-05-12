@@ -43,7 +43,7 @@ function App() {
             <Route path="/Register" element={<Register/>}/>
             <Route path="/Admin" element={<Admin/>}/>
             <Route path="/sidebar" element={<Sidebar/>}/>
-            <Route path="/home" element={<Home/>}/>
+          
           
           
           
@@ -60,18 +60,7 @@ function App() {
             <Route path="/addshop" element={<Addshop/>}/>
             
             <Route path="/Profile" element={<UserProfile/>}/>
-          
-         
-           
-          
 
-            
-     
-             
-           
-         
-          
-           
             
             <Route path = "/about" element = { <AboutUs/>} />
             <Route path = "/dd" element = { <Shopdetails/>} />
