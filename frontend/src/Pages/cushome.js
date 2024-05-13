@@ -16,7 +16,9 @@ import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import jsPDF from "jspdf";
 import { toast, ToastContainer } from "react-toastify";
-
+import img4 from './img/1.jpg';
+import img5 from './img/11.jpg';
+import img6 from './img/111.jpg';
 
 export default function CusHome() {
   const [featuredStores, setFeaturedStores] = useState([]);

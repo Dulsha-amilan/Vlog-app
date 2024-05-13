@@ -144,6 +144,7 @@ export default function CusHome() {
     <option value="">Select catogory</option>
     <option value="React Native">React Native</option>
     <option value="React">React</option>
+    <option value="Bootstrap">Bootstrap</option>
     <option value="Anguler">Anguler</option>
     <option value="Java">Java</option>
     <option value="Python">Python</option>
