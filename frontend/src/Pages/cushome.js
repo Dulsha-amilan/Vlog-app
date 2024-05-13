@@ -70,10 +70,10 @@ export default function CusHome() {
           </div>
         </Slider>
       </div>
-      <div className="bg-indigo-600 py-20">
+      <div className="bg-indigo-400 py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold text-white mb-4">Welcome to our Code Flow platform</h1>
-          <p className="text-lg text-gray-300 mb-8">Space for creative codes</p>
+          <p className="text-lg text-gray-280 mb-8">Space for creative codes</p>
           <a href='/about'>
             <button className="bg-white text-indigo-600 py-3 px-6 rounded-lg hover:bg-indigo-700 hover:text-white transition-colors duration-300">
               About Us
